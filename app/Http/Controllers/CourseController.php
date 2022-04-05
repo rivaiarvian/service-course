@@ -9,6 +9,15 @@ use Illuminate\Support\Facades\Validator;
 
 class CourseController extends Controller
 {
+    public function index(Request $request)
+    {
+        $course = Course::query();
+
+        return response()->json([
+            "status"=>"success",
+            "data"=>$course->paginate(10)
+        ]);
+    }
     public function create(Request $request)
     {
         $rules = [
