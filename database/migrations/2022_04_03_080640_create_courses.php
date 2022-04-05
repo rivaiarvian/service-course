@@ -17,11 +17,11 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->boolean('certificate');
-            $table->string('thumbanil')->nullable();
+            $table->string('thumbnail')->nullable();
             $table->enum('type',['free','premium']);
             $table->enum('status',['draft','published']);
             $table->integer('price')->default(0)->nullable();
-            $table->enum('level',['all-level','beginer','intermediate','advance']);
+            $table->enum('level',['all-level','beginner','intermediate','advance']);
             $table->longText('description')->nullable();
             $table->foreignId('mentor_id')->constrained('mentors')->onDelete('cascade');
             $table->timestamps();
