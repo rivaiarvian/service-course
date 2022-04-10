@@ -51,4 +51,5 @@ Route::post('/image-courses',[ImageCourseController::class, 'create']);
 Route::delete('/image-courses/{id}',[ImageCourseController::class, 'destroy']);
 
 //My Course
+Route::get('/my-courses',[MyCourseController::class, 'index']);
 Route::post('/my-courses',[MyCourseController::class, 'create']);
