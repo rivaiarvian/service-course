@@ -12,10 +12,10 @@ function getUser($userId){
        return $data;
     } catch (\Throwable $e) {
         return [
-            'satatus' =>'error',
+            'status' =>'error',
             'http_code' =>500,
             'message' => 'Service user unavailable'
-        ]
+        ];
     }
 }
 
@@ -25,10 +25,10 @@ function getUserById($userId=[]){
     try {
         if(count($userId) === 0){
             return [
-                'satatus' =>'success',
+                'status' =>'success',
                 'http_code' =>200,
                 'data' => []
-            ]
+            ];
         }
 
         $response = Http::timeout(10)->get($url,['user_id[]'=>$userId]);
@@ -37,9 +37,9 @@ function getUserById($userId=[]){
         return $data;
     } catch (\Throwable $e) {
         return [
-            'satatus' =>'error',
+            'status' =>'error',
             'http_code' =>500,
             'message' => 'Service user unavailable'
-        ]
+        ];
     }
 }
