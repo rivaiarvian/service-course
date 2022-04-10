@@ -134,7 +134,7 @@ class LessonController extends Controller
             return response()->json([
                 'status'=>'error',
                 'message'=> 'Lesson not found'
-            ]);
+            ],404);
         }
         $lesson->delete();
         return response()->json([
