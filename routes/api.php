@@ -4,6 +4,7 @@ use App\Http\Controllers\ChapterController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\LessonController;
 use App\Http\Controllers\MentorController;
+use App\Http\Controllers\ImageCourseController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -43,3 +44,6 @@ Route::get('/lesson/{id}',[LessonController::class, 'show']);
 Route::post('/lesson',[LessonController::class, 'create']);
 Route::put('/lesson/{id}',[LessonController::class, 'update']);
 Route::delete('/lesson/{id}',[LessonController::class, 'destroy']);
+
+//Image Course
+Route::post('/image-courses',[ImageCourseController::class, 'create']);
