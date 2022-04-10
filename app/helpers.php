@@ -20,7 +20,7 @@ function getUser($userId){
 }
 
 function getUserById($userId=[]){
-    $url = env('URL_SERVICE_USER').'users/'.$userId;
+    $url = env('URL_SERVICE_USER').'users/';
 
     try {
         if(count($userId) === 0){
