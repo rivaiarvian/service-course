@@ -57,3 +57,4 @@ Route::post('/my-courses',[MyCourseController::class, 'create']);
 
 //Review
 Route::post('/reviews',[ReviewController::class, 'create']);
+Route::put('/reviews/{id}',[ReviewController::class, 'update']);
