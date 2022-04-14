@@ -43,3 +43,20 @@ function getUserById($userId=[]){
         ];
     }
 }
+
+function postOrder($params){
+    $url = env('SERVICE_ORDER_PAYMENT_URL').'api/orders';
+    try {
+        $response = Http::post($url,$params);
+        $data = $response->json();
+        $data['http_code'] = $response->getStatusCode();
+        return $data;
+
+    } catch (\Throwable $e) {
+         return [
+            'status' =>'error',
+            'http_code' =>500,
+            'message' => 'Service order payment unavailable'
+        ];
+    }
+}
