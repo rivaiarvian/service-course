@@ -55,6 +55,7 @@ Route::delete('/image-courses/{id}',[ImageCourseController::class, 'destroy']);
 //My Course
 Route::get('/my-courses',[MyCourseController::class, 'index']);
 Route::post('/my-courses',[MyCourseController::class, 'create']);
+Route::post('/my-courses/premium',[MyCourseController::class, 'createPremiumAccess']);
 
 //Review
 Route::post('/reviews',[ReviewController::class, 'create']);
